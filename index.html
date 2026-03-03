@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una docena al día</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
+    }
+
+    h1 {
+        margin-top: 30px;
+        font-size: 28px;
+    }
+
+    img {
+        width: 80%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    #numero {
+        font-size: 80px;
+        font-weight: bold;
+        color: #1e88e5;
+        margin: 30px 0;
+    }
+
+    button {
+        width: 80%;
+        max-width: 300px;
+        padding: 15px;
+        margin: 10px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .generar {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .finalizar {
+        background-color: #e53935;
+        color: white;
+    }
+
+    button:active {
+        transform: scale(0.98);
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Una docena al día</h1>
+
+<img src="piano.jpg" alt="Piano de cola negro">
+
+<div id="numero"></div>
+
+<button class="generar" onclick="generarNumero()">Generar</button>
+<button class="finalizar" onclick="finalizarApp()">Finalizar</button>
+
+<script>
+    function generarNumero() {
+        const numero = Math.floor(Math.random() * 12) + 1;
+        document.getElementById("numero").textContent = numero;
+    }
+
+    function finalizarApp() {
+        alert("Gracias por usar Una docena al día 🎹");
+        window.close();
+    }
+
+    // Generar número aleatorio al iniciar
+    window.onload = function() {
+        generarNumero();
+    };
+</script>
+
+</body>
+</html>
